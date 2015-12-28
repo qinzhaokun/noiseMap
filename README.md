@@ -15,11 +15,17 @@ Here are the relevant steps from the post:
 Adding Maven dependencies in project web deployment assembly :
 
 > Open project properties(example: In project explorer rightClick on project name to select "Properties").
+
 > Select "Deployment Assembly".
+
 > Click "Add..." button on the right navigation.
+
 > Select "Java Build Path Entries" from menu of Directive Type and then click "Next".
+
 > Select "Maven Dependencies" from Java Build Path Entries menu
+
 > click "Finish".
+
 Now the "Maven Dependencies" should be added to the Web Deployment Assembly and it should run.
 
 2: cannot find controller, the url cannot be mapped to a existing controller.
@@ -29,3 +35,10 @@ Now the "Maven Dependencies" should be added to the Web Deployment Assembly and 
 solution: Make sure in dispathcer-servlet.xml, spring can scan your components.
 
     <context:component-scan base-package="zqin.*" />
+
+3: use lombok to generate setter and getter methods in POJO. use @Data, but in Eclipse, we must add 
+
+    -Xbootclasspath/a:lombok.jar
+    -javaagent:lombok.jar
+    
+in eclipse.ini and restart, update maven project.    

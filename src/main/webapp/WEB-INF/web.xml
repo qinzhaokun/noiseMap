@@ -17,9 +17,10 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
  
+ <!-- default spring configuration file is under WEB-INF, name dispatcher-servlet.xml --> 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
 	</context-param>
  
 	<listener>
