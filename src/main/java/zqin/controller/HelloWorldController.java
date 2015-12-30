@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import zqin.kafka.NoiseProducer;
 import zqin.model.testTable;
 import zqin.repository.ITestTableDao;
  
@@ -22,12 +23,14 @@ public class HelloWorldController {
 			@RequestParam(value = "name", required = false, defaultValue = "World") String name,
 			@RequestParam(value = "id", required = false, defaultValue = "1") Long id) {
 		
-		testTable test = iTestTableDao.findOne(id);
-		System.out.println(test.getName());
+		//testTable test = iTestTableDao.findOne(id);
+		//System.out.println(test.getName());
 		ModelAndView mv = new ModelAndView("helloworld");
 		mv.addObject("message", message);
 		mv.addObject("name", name);
-		mv.addObject("fromDatabase", test.getName());
+		NoiseProducer noiseProducer = new NoiseProducer();
+		noiseProducer.sendNoiseData();
+		//mv.addObject("fromDatabase", test.getName());
 		return mv;
 	}
 }

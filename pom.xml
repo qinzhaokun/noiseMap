@@ -163,6 +163,14 @@
 			<artifactId>lombok</artifactId>
 			<version>1.16.6</version>
 		</dependency>
+		
+		<!-- kafka -->  
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka_2.10</artifactId>
+			<version>0.9.0.0</version>
+		</dependency>
+		
         
   </dependencies>
 </project>

@@ -41,4 +41,8 @@ solution: Make sure in dispathcer-servlet.xml, spring can scan your components.
     -Xbootclasspath/a:lombok.jar
     -javaagent:lombok.jar
     
-in eclipse.ini and restart, update maven project.    
+in eclipse.ini and restart, update maven project.   
+
+4: jsp file error in Eclipse
+
+solution: add tomcat lib into java build path. 
